@@ -1,14 +1,7 @@
-#include <Grove_LED_Bar.h>
-
 /*
-    Grove LED Bar - Level Example
-    This example will show you how to use setLevel() function of this library.
-    The setLevel() function illuminates the given number of LEDs from either side.
-
-    Syntax setLevel(level)
-    0  = all LEDs off
-    5  = 5 LEDs on
-    10 = all LEDs on
+    Grove LED Bar - Random Example
+    This example will show you how to use setBits() function of this library.
+    Set any combination of LEDs using 10 bits.
 */
 
 #include <Grove_LED_Bar.h>
@@ -24,9 +17,7 @@ void setup() {
 }
 
 void loop() {
-    // Walk through the levels
-    for (int i = 0; i <= 10; i++) {
-        bar.setLevel(i);
-        delay(100);
-    }
+    // Display a random value between 0 (all LEDs off) and 1023 (all LEDs on)
+    bar.setBits(random(1024));
+    delay(50);
 }
