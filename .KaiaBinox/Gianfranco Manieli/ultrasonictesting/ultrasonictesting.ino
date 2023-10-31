@@ -1,5 +1,7 @@
 #include "Ultrasonic.h"
 
+// author mr gianfranco manieli #1 programmer
+
 Ultrasonic ultrasonic(7);
 void setup()
 {
