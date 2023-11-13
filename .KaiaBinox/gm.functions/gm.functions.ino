@@ -3,7 +3,9 @@
 #include "Ultrasonic.h"
 
 
-Ultrasonic myUltrasonicSensor(8);
+Ultrasonic myUSMIDDLE(8);
+Ultrasonic myUSRIGHT(7);
+Ultrasonic myUSLEFT(4);
 
 
 
@@ -15,10 +17,25 @@ void setup()
 }
 void loop()
 {
-  long RangeInCentimeters;
+  long MIDDLEUsRange;
+  long RIGHTUsRange;
+  long LEFTUsRange;
 
-  RangeInCentimeters = myUltrasonicSensor.MeasureInCentimeters(); // two measurements should keep an interval
-  Serial.print(RangeInCentimeters);//0~400cm
+  MIDDLEUsRange = myUSMIDDLE.MeasureInCentimeters(); // two measurements should keep an interval
+  Serial.print("MIDDLE:");
+  Serial.print(MIDDLEUsRange);//0~400cm
+  Serial.println(" cm");
+  delay(250);
+
+  RIGHTUsRange = myUSRIGHT.MeasureInCentimeters(); // two measurements should keep an interval
+  Serial.print("RIGHT:");
+  Serial.print(RIGHTUsRange);//0~400cm
+  Serial.println(" cm");
+  delay(250);
+
+  LEFTUsRange = myUSLEFT.MeasureInCentimeters(); // two measurements should keep an interval
+  Serial.print("LEFT:");
+  Serial.print(LEFTUsRange);//0~400cm
   Serial.println(" cm");
   delay(250);
 
