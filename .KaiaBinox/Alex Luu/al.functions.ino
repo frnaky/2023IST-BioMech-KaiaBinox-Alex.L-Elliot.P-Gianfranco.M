@@ -1,1 +1,0 @@
-me sSTUPID A;EX
