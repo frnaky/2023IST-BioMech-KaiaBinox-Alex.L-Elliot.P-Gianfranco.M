@@ -11,18 +11,19 @@ Ultrasonic myUSLEFT(4);
 // Create uint64_t type 8x8 matrix picture at
 // https://xantorohara.github.io/led-matrix-editor/#
 const uint64_t EXAMPLE[12] = { // idk why it has to be 12
-    0xff07070707070707, // left
-    0xffe0e0e0e0e0e0e0, // RIGHT BAR
-    0x0707070707070707, // RIGHT BAR ( NOT DISPLAYING!!!)
-    0x3f212d212d212121, // weird U thing displaying >???
-    0x3f212d212d212d21,
-    0x3f212d2d2d212121,
-    0x3f212d2d2d2d2d2d,
-    0x00040a1120408000,
-    0x081c3e7f1c1c1c1c,
-    0x0010307fff7f3010,
-    0x1c1c1c1c7f3e1c08,
-    0x00080cfefffe0c08
+    0xff07070707070707, // left       1
+    0xffe0e0e0e0e0e0e0, // RIGHT BAR   2
+    0x0707070707070707, // RIGHT BAR ( NOT DISPLAYING!!!) 3
+    0x3f212d212d212121, // weird U thing displaying >???  4
+    0xff99996624242418,   //dicl and bllas  5
+    0xff99996624242418, //6
+    0xff99996624242418,
+    0xff99996624242418,
+    0xff99996624242418,
+    0xff99996624242418,
+    0xff99996624242418,
+    0xff99996624242418
+
 };
 
 Matrix_8x8 matrix;
@@ -51,6 +52,9 @@ Serial.print(MIDDLEUsRange);
 
 
   }
+
+  matrix.writeOnePicture(EXAMPLE[5]);
+  matrix.display();
 /*
   MIDDLEUsRange = myUSMIDDLE.MeasureInCentimeters();
   Serial.print("MIDDLE:");
